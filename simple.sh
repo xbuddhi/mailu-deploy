@@ -2,6 +2,7 @@
 
 # Create server.js file
 apt install nodejs -y
+apt install npm -y
 echo "Creating server.js file..."
 cat <<EOT > server.js
 const express = require('express');
