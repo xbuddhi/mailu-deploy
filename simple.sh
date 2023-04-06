@@ -1,28 +1,16 @@
 #!/bin/bash
 
-# Create server.js file
-apt install nodejs -y
-apt install npm -y
-echo "Creating server.js file..."
-cat <<EOT > server.js
-const express = require('express');
+# This script starts a Python web server on port 8080 that responds with "Hello, World!"
 
-const app = express();
-const port = 80;
+# Check if Python is installed
+if ! command -v python &> /dev/null
+then
+    echo "Python is not installed. Aborting."
+    exit 1
+fi
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+# Start the Python web server
+python -m SimpleHTTPServer 80 &
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(\`Server running on port \${port}\`);
-});
-EOT
-
-# Install dependencies (if needed)
-echo "Installing dependencies..."
-npm install express
-
-# Start server
-echo "Starting server..."
-node server.js
+# Print a message indicating that the server is running
+echo "Server is running on port 80."
