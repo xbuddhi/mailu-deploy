@@ -5,7 +5,7 @@ wget -O - https://raw.githubusercontent.com/xbuddhi/mailu-deploy/master/mailu.sh
 
 inspect containers
 ```console
-docker-compose logs -f smtp
+docker compose logs -f smtp
 ```
 
 remove containers and clear
