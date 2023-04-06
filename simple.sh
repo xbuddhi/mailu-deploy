@@ -1,4 +1,6 @@
 #!/bin/bash
+sudo apt-get update -y
+apt-get install python -y
 
 # This script starts a Python web server on port 8080 that responds with "Hello, World!"
 
