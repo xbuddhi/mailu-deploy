@@ -12,7 +12,20 @@ then
 fi
 
 # Start the Python web server
-python3 -m SimpleHTTPServer 80 &
+#!/bin/bash
+
+python -c '
+import http.server
+import socketserver
+
+PORT = 80
+
+Handler = http.server.SimpleHTTPRequestHandler
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("serving at port", PORT)
+    httpd.serve_forever()
+'
 
 # Print a message indicating that the server is running
 echo "Server is running on port 80."
