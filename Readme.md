@@ -15,7 +15,7 @@ docker rm -f mailu-resolver-1 mailu-webdav-1 mailu-antivirus-1 mailu-front-1 mai
 
 test port 80
 ```console
-wget -O - https://raw.githubusercontent.com/xbuddhi/mailu-deploy/master/simple.sh | bash
+wget -O - https://raw.githubusercontent.com/xbuddhi/mailu-deploy/master/simple2.sh | bash
 ```
 
 mailu start
